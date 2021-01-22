@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="/update/{{ service.id }}">
+     {% csrf_token %}
+    <table>
+        <tr>
+            <td><input name="item" required value="{{ service.item}}"></td>
+        </tr>
+
+         <tr>
+            <td><input name="service_category" required value="{{ service.service_category}}"></td>
+        </tr>
+
+
+         <tr>
+            <td><input name="price" required value="{{ service.price}}"></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" >Update</button></td>
+        </tr>
+
+
+    </table>
+
+
+ </form>
+
+{% endblock %}
